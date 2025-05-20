@@ -1,3 +1,5 @@
 package main 
 
-func main(){}
+func main(){
+  fmt.Println("Hello !!!")
+}
