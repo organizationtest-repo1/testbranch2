@@ -7,6 +7,8 @@ func main(){
   fmt.Println("Nice2")
   fmt.Println("Nice3")
   fmt.Println("Nice5")
+  fmt.Println("Nice6")
+  
 
   
 }
