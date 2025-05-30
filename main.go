@@ -10,6 +10,7 @@ func main(){
   fmt.Println("Nice6")
   fmt.Println("Nice7, from fork")
   fmt.Println("Nice 8 ")
+  fmt.Println("Nice 9 ")
 
   
 
