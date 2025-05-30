@@ -12,6 +12,10 @@ func main(){
   fmt.Println("Nice 8 ")
   fmt.Println("Nice 9 ")
 
+  if 1 == 1 {
+    panic("random error")
+  }
+
   
 
   
