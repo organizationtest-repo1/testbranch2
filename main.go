@@ -16,6 +16,9 @@ func main(){
     panic("random error")
   }
 
+   if 1 == 1 {
+    panic("random error")
+  }
   
 
   
