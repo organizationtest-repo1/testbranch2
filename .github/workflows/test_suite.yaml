@@ -14,6 +14,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: check existing sha
+      uses: autofix-ci/action@ff86a557419858bb967097bfc916833f5647fa8c
+
+    - name: check non-existing sha
+      uses: autofix-ci/action@635ffb0c9798bd160680f18fd73371e355b85f27
       
     - name: Print environment info
       run: |
