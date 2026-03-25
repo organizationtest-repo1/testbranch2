@@ -1,0 +1,28 @@
+name: Vulnerable PR Handler (TEST - detection canary)
+# WARNING: This workflow is intentionally misconfigured to test
+# GitHub Actions security detections. Do NOT use as a template.
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # DANGEROUS: checks out the PR head (untrusted code) in a
+      # privileged pull_request_target context with write perms
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      # Simulates running untrusted code that could exfiltrate secrets
+      - name: Run build
+        run: |
+          make build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
